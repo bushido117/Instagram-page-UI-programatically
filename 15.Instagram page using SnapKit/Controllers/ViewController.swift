@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StoriesTableViewCell.self, forCellReuseIdentifier: String(describing: StoriesTableViewCell.self))
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: String(describing: PostTableViewCell.self))
         tableView.separatorColor = .clear
         return tableView
     }()
+    
     private var items: [TableViewItemType] = [
         .stories([
         StoryCellModel(image: UIImage(named: "dog")!, username: "user1", isAddButtonVisible: true, isNewStory: false),
@@ -35,13 +35,13 @@ class ViewController: UIViewController {
         StoryCellModel(image: UIImage(named: "dog")!, username: "user7", isAddButtonVisible: false, isNewStory: false)
     ]),
         .post(
-            PostCellModel(userImage: UIImage(named: "dog")!, username: "user1", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 123, comment: CommentShortInfo(username: "user3", commentText: "Hello motherfucker"))
+            PostCellModel(userImage: UIImage(named: "dog")!, username: "user1", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 123, comment: CommentShortInfo(username: "user3", commentText: "Hello"))
         ),
         .post(
-            PostCellModel(userImage: UIImage(named: "dog")!, username: "user1", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 123, comment: CommentShortInfo(username: "user3", commentText: "Hello motherfucker"))
+            PostCellModel(userImage: UIImage(named: "dog")!, username: "user1", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 123, comment: CommentShortInfo(username: "user3", commentText: "Hello"))
         ),
         .post(
-            PostCellModel(userImage: UIImage(named: "dog")!, username: "user1", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 123, comment: CommentShortInfo(username: "user3", commentText: "Hello motherfucker"))
+            PostCellModel(userImage: UIImage(named: "dog")!, username: "user1", postSubtitle: "Sponsored", postImage: UIImage(named: "dog")!, numberOfLikes: 123, comment: CommentShortInfo(username: "user3", commentText: "Hello"))
         )
     ]
 
@@ -118,13 +118,5 @@ extension ViewController: UITableViewDataSource {
             cell.configure(with: post)
             return cell
         }
-        return UITableViewCell()
     }
-    
-    
 }
-
-extension ViewController: UITableViewDelegate {
-    
-}
-

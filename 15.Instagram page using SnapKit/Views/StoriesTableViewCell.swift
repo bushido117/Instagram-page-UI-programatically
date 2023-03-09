@@ -20,6 +20,7 @@ class StoriesTableViewCell: UITableViewCell {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
+    
     private var stories: [StoryCellModel] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -32,7 +33,6 @@ class StoriesTableViewCell: UITableViewCell {
     }
     
     private func setup() {
-//        когда добавлял просто на addSubview ничего не работало
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

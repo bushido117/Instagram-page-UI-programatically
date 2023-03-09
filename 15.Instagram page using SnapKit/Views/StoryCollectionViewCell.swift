@@ -50,16 +50,19 @@ class StoryCollectionViewCell: UICollectionViewCell {
             make.size.equalTo(60)
             make.leading.trailing.top.equalToSuperview().inset(6)
         }
+        
         contentView.addSubview(usernameLabel)
         usernameLabel.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(6)
             make.top.equalTo(imageView.snp.bottom).offset(6)
         }
+        
         contentView.addSubview(plusButton)
         plusButton.snp.makeConstraints { make in
             make.trailing.bottom.equalTo(imageView)
             make.size.equalTo(20)
         }
+        
         contentView.addSubview(circleImage)
         circleImage.snp.makeConstraints { make in
             make.center.equalTo(imageView)

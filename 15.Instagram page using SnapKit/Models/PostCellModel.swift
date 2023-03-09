@@ -5,7 +5,6 @@
 //  Created by Вадим Сайко on 10.01.23.
 //
 
-import Foundation
 import UIKit
 
 struct PostCellModel {
